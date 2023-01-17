@@ -2,16 +2,25 @@
 
 public static class ShufflePolicies
 {
-    private static Random Random = new();
+    private static readonly Random Random = new();
     
     public static void Shuffle(this List<Policy> Policies)
     {
-        int Length = Policies.Count;
-        while (Length > 1)
+        do
         {
-            Length--;
-            int Rng = Random.Next(Length + 1);
-            (Policies[Rng], Policies[Length]) = (Policies[Length], Policies[Rng]);
-        }
+            int Length = Policies.Count;
+            while (Length > 1)
+            {
+                Length--;
+                int Rng = Random.Next(Length + 1);
+                (Policies[Rng], Policies[Length]) = (Policies[Length], Policies[Rng]);
+            }
+        } while (Wait(1500));
+    }
+
+    private static bool Wait(int MillisecondDelay)
+    {
+        Task.Delay(MillisecondDelay);
+        return false;
     }
 }
