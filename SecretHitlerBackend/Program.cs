@@ -1,3 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
+namespace SecretHitlerBackend;
 
-Console.WriteLine("Hello, World!");
+public static class Program
+{
+    public static int Main()
+    {
+        return 0;
+    }
+}
