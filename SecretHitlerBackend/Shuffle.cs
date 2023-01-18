@@ -1,21 +1,25 @@
-﻿namespace SecretHitlerBackend.Policies;
+﻿using SecretHitlerBackend.Policies;
+
+namespace SecretHitlerBackend;
 
 public static class ShufflePolicies
 {
     private static readonly Random Random = new();
     
-    public static void Shuffle(this List<Policy> Policies)
+    public static List<T> Shuffle<T>(this List<T> Items)
     {
         do
         {
-            int Length = Policies.Count;
+            int Length = Items.Count;
             while (Length > 1)
             {
                 Length--;
                 int Rng = Random.Next(Length + 1);
-                (Policies[Rng], Policies[Length]) = (Policies[Length], Policies[Rng]);
+                (Items[Rng], Items[Length]) = (Items[Length], Items[Rng]);
             }
         } while (Wait(1500));
+
+        return Items;
     }
 
     private static bool Wait(int MillisecondDelay)
