@@ -1,6 +1,4 @@
-﻿using SecretHitlerBackend;
-
-namespace SecretHitlerGameHandler;
+﻿namespace SecretHitlerGameHandler;
 
 public static class Program
 {

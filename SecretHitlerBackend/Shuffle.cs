@@ -1,6 +1,4 @@
-﻿using SecretHitlerBackend.Policies;
-
-namespace SecretHitlerBackend;
+﻿namespace SecretHitlerBackend;
 
 public static class ShufflePolicies
 {
