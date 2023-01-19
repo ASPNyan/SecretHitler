@@ -1,4 +1,4 @@
-﻿namespace SecretHitlerBackend.Boards.FacistBoard;
+﻿namespace SecretHitlerBackend.Boards.FascistBoard;
 
 public enum PolicyAction
 {

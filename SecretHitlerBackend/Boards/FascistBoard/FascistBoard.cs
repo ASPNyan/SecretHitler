@@ -1,9 +1,9 @@
 ﻿using SecretHitlerBackend.Player.Membership.Party;
 using SecretHitlerBackend.Victory;
 
-namespace SecretHitlerBackend.Boards.FacistBoard;
+namespace SecretHitlerBackend.Boards.FascistBoard;
 
-public class FacistBoard : Board
+public class FascistBoard : Board
 {
     public Dictionary<byte, PolicyAction> BoardActions;
     public override byte MaxTiles => 6;
@@ -16,7 +16,7 @@ public class FacistBoard : Board
         return null;
     }
 
-    public FacistBoard(byte PlayerCount)
+    public FascistBoard(byte PlayerCount)
     {
         BoardActions = Actions.GetActions(PlayerCount);
     }

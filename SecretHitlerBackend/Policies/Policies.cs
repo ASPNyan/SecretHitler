@@ -4,11 +4,11 @@ public class Policies
 {
     public List<Policy> Deck = new();
 
-    public Policies(DeckSize Size)
+    public Policies()
     {
-        for (int I = 1; I <= 17 * (int)Size; I++)
+        for (int I = 1; I <= 51; I++)
         {
-            Deck.Add(I <= 6 * (int)Size ? Policy.Liberal : Policy.Fascist);
+            Deck.Add(I <= 18 ? Policy.Liberal : Policy.Fascist);
         }
         Deck.Shuffle();
     }
