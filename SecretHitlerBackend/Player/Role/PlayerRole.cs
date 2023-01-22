@@ -3,6 +3,7 @@
 public enum PlayerRole
 {
     Default,
+    ProposedChancellor,
     Chancellor,
     President
 }

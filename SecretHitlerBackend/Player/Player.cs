@@ -10,9 +10,9 @@ public class Player
     public bool Dead = false;
     public byte PlayerId;
 
-    internal Player(PlayerRole Role, PartyMembership PartyMembership, PersonEnum Person, byte PlayerId)
+    internal Player(PlayerRole Role, PartyMembership PartyMembership, PersonEnum Person, byte PlayerId, string Username = "")
     {
-        PlayerData = new PlayerData(Role, PartyMembership, Person);
+        PlayerData = new PlayerData(Username, Role, PartyMembership, Person);
         this.PlayerId = PlayerId;
     }
 
