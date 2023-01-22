@@ -9,14 +9,24 @@ public static class HandlePresident
     {
         Player CurrentPresident = Game.GetPresident();
         Player? NextPresident = null;
-        foreach (var Player in Game.Players.Where(Player => Player.PlayerId == ++CurrentPresident.PlayerId % Game.PlayerCount))
+        
+        foreach (var Player in Game.Players.Where(Player => Player.PlayerId == ++Game.President % Game.PlayerCount))
         {
             NextPresident = Player;
         }
-
         if (NextPresident == null) throw new MissingExpectedValue($"Missing Expected Player After Player with Id {CurrentPresident.PlayerId}.");
-        NextPresident.PlayerData.Role.Assign(PlayerRole.President);
+        
         CurrentPresident.PlayerData.Role.Assign(PlayerRole.Default);
+        NextPresident.PlayerData.Role.Assign(PlayerRole.President);
+    }
+
+    public static void SelectPresident(this Game Game, byte PresidentId)
+    {
+        if (Game.GetPresident().PlayerId == PresidentId || Game.President == PresidentId) return;
+
+        Player? Player = Game.Players.GetPlayer(PresidentId);
+
+        Player?.PlayerData.Role.Assign(PlayerRole.President);
     }
     
     internal static Player GetPresident(this Game Game)

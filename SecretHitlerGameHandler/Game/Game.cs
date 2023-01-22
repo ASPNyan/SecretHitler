@@ -14,6 +14,7 @@ public class Game
     protected internal readonly LiberalBoard LiberalBoard = new();
     protected internal FascistBoard FascistBoard = new(0);
     protected internal readonly Policies Policies = new();
+    protected internal byte President = 0;
     protected internal byte PreviousChancellor = 0;
     protected internal Dictionary<byte, string> PregamePlayers = new();
 
