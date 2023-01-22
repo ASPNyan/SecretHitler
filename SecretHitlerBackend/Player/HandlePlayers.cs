@@ -7,6 +7,12 @@ namespace SecretHitlerBackend.Player;
 public static class GetPlayers
 {
     private static readonly List<byte> UsedPlayerIds = new();
+
+    public static Player? GetPlayer(this IEnumerable<Player> Players, byte PlayerId)
+    {
+        return Players.FirstOrDefault(Player => Player.PlayerId == PlayerId);
+    }
+    
     public static void AddFascists(this ICollection<Player> Players, double PlayerCount)
     {
         int Fascists = (int)Math.Round(PlayerCount / 2) - 1;
