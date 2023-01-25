@@ -2,7 +2,7 @@
 using SecretHitlerBackend.Player.Membership.Person;
 using SecretHitlerBackend.Player.Role;
 
-namespace SecretHitlerBackend.Player;
+namespace SecretHitlerBackend.Player.Handling;
 
 public static class GetPlayers
 {

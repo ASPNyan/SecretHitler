@@ -1,4 +1,4 @@
-﻿namespace SecretHitlerBackend.Player;
+﻿namespace SecretHitlerBackend.Player.Handling;
 
 public static class KillPlayer
 {

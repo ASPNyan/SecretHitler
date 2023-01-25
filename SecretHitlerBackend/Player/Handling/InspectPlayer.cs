@@ -1,6 +1,6 @@
 ﻿using SecretHitlerBackend.Player.Membership.Party;
 
-namespace SecretHitlerBackend.Player;
+namespace SecretHitlerBackend.Player.Handling;
 
 public static class InspectPlayer
 {
