@@ -5,7 +5,7 @@ using SecretHitlerBackend.Policies;
 
 namespace SecretHitlerGameHandler.Game;
 
-public class Game
+public abstract class Game
 {
     protected internal string GameName;
     protected internal readonly uint GameId;

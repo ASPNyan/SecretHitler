@@ -1,5 +1,5 @@
 ﻿using SecretHitlerBackend.Boards.FascistBoard;
-using SecretHitlerBackend.Player;
+using SecretHitlerBackend.Player.Handling;
 using SecretHitlerGameHandler.Game.GameHandling.RoleHandling;
 
 namespace SecretHitlerGameHandler.Game.GameHandling;
