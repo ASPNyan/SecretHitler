@@ -16,7 +16,7 @@ public abstract class Game
     protected internal readonly Policies Policies = new();
     protected internal byte President = 0;
     protected internal byte PreviousChancellor = 0;
-    protected internal Dictionary<byte, string> PregamePlayers = new();
+    protected internal readonly Dictionary<byte, string> PregamePlayers = new();
 
     public Game(string? GameName = null)
     {
