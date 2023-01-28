@@ -1,0 +1,86 @@
+﻿@font-face {
+    font-family: "Bullpen Heavy";
+    src: url("../fonts/Bullpen Heavy.otf") format("opentype");
+}
+
+body {
+    overflow: hidden;
+}
+
+h3 {
+    position: absolute;
+    top: -2vh;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    font: 5vmin "Bullpen Heavy";
+}
+
+h1 {
+    position: absolute;
+    top: -5vh;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    font: 20vmin "Eskapade Fraktur Black";
+    outline: none;
+}
+
+h1::before {
+    content: "Secret Hitler";
+    animation: Title 3.5s forwards;
+}
+
+h1, h3, p, div {
+    user-select: none;
+}
+
+@keyframes Title {
+    from {
+        content: "";
+        color: white;
+    }
+    7% {
+        content: "S";
+    }
+    14% {
+        content: "Se";
+    }
+    21% {
+        content: "Sec";
+    }
+    28% {
+        content: "Secr";
+    }
+    35% {
+        content: "Secre";
+    }
+    42% {
+        content: "Secret";
+    }
+    49% {
+        content: "Secret "; /*   unicode character acts as a visible space in the animation */
+    }
+    56% {
+        content: "Secret H";
+    }
+    63% {
+        content: "Secret Hi";
+    }
+    70% {
+        content: "Secret Hit";
+    }
+    77% {
+        content: "Secret Hitl";
+    }
+    84% {
+        content: "Secret Hitle";
+    }
+    91% {
+        content: "Secret Hitler";
+    }
+    100% {
+        content: "Secret Hitler";
+        color: var(--Fascist-Orange);
+    }
+}

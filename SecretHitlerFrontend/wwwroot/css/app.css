@@ -1,9 +1,15 @@
-#app {
-    background: #2a2a32;
+@font-face {
+    font-family: "Eskapade Fraktur Black";
+    src: url("../fonts/Eskapade Fraktur Black.ttf") format("truetype");
 }
 
-h1:focus {
-    outline: none;
+:root {
+    --Golden-Ratio: 1.61803398875;
+}
+
+body {
+    background: #2a2a32;
+    overflow: hidden;
 }
 
 #blazor-error-ui {
@@ -34,3 +40,28 @@ h1:focus {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+#Loading {
+    width: 100vw;
+    text-align: center;
+    color: white;
+    font: 10vmin "Eskapade Fraktur Black";
+    height: 12vmin;
+    top: calc(50% - 6vmin);
+}
+
+#Loading::before {
+    animation: Loading 1s infinite;
+}
+
+@keyframes Loading {
+    from, to {
+        content: "Loading.."
+    }
+    33% {
+        content: "Loading..."
+    }
+    66% {
+        content: "Loading."
+    }
+}

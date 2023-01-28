@@ -1,0 +1,64 @@
+﻿:root {
+    --Fascist-Orange: #ff897f;
+    --Liberal-Blue: #6381a5
+}
+
+#PlayButton {
+    --Height: calc(10vmax / var(--Golden-Ratio));
+    position: absolute;
+    
+    width: 10vmax;
+    height: var(--Height);
+    left: calc(50% - 5vmax);
+    top: calc(50% - var(--Height) / 2);
+    
+    border-radius: 1vmax;
+    background: dimgrey;
+    color: white;
+    font: 5vmax "Eskapade Fraktur Black";
+    text-align: center;
+    text-justify: distribute;
+    line-height: 100%;
+    
+    animation: none;
+    transition: all 150ms ease-in-out;
+}
+
+#PlayButton:hover {
+    animation: PlayButtonHover 2.5s linear infinite;
+    scale: 1.5;
+}
+
+@keyframes PlayButtonHover {
+    from, to {
+        background: var(--Liberal-Blue);
+        border-color: var(--Liberal-Blue);
+    }
+    50% {
+        background: var(--Fascist-Orange);
+        border-color: var(--Fascist-Orange);
+    }
+}
+
+#Footer {
+    position: absolute;
+    width: calc(100% - 2vmax);
+    height: 3vmax;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    
+    padding: 1vmax;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+#Footer a {
+    text-decoration: none;
+    color: #aaaaaa;
+    text-align: center;
+    font-size: 1vmax;
+    line-height: 50%;
+    place-self: center;
+}

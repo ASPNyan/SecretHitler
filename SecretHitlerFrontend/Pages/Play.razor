@@ -1,0 +1,15 @@
+﻿@page "/Play/{Page:int?}"
+
+<PageTitle>Play Secret Hitler Online</PageTitle>
+
+<h1></h1>
+
+@code {
+    [Parameter]
+    public int? Page { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Page ??= 1;
+    }
+}

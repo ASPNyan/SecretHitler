@@ -9,14 +9,20 @@ public static class HandlePresident
     public static void RotatePresident(this Game Game)
     {
         Player CurrentPresident = Game.GetPresident();
+        byte PresidentId = CurrentPresident.PlayerId;
+        
         Player? NextPresident = null;
-        
-        foreach (var Player in Game.Players.Where(Player => Player.PlayerId == ++Game.President % Game.PlayerCount))
+
+        while (NextPresident == null)
         {
-            NextPresident = Player;
+            foreach (var Player in Game.Players.Where(Player => Player.PlayerId == PresidentId % Game.PlayerCount + 1))
+            {
+                NextPresident = Game.Players.GetPlayer(PresidentId);
+            }
+
+            PresidentId++;
         }
-        if (NextPresident == null) throw new MissingExpectedValue($"Missing Expected Player After Player with Id {CurrentPresident.PlayerId}.");
-        
+
         CurrentPresident.PlayerData.Role.Assign(PlayerRole.Default);
         NextPresident.PlayerData.Role.Assign(PlayerRole.President);
     }

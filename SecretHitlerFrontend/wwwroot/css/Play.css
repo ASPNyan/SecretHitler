@@ -1,0 +1,16 @@
+﻿
+h1:nth-child(1) {
+    position: absolute;
+    top: -10vh;
+    line-height: 0;
+    width: 100vw;
+    text-align: center;
+    color: var(--Fascist-Orange);
+    font: 10vmin "Eskapade Fraktur Black";
+    outline: none;
+}
+
+h1:nth-child(1):before {
+    content: "";
+    animation: Title 1250ms;
+}
