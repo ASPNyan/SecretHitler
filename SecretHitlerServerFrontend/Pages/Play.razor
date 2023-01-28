@@ -1,0 +1,121 @@
+﻿@page "/Play/{Page:int}"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@using SecretHitlerGameHandler.Game
+@using SecretHitlerServerFrontend.Classes
+@inject ProtectedLocalStorage BrowserStorage
+@inject Games Games
+
+<link href="css/PlayTitle.css" rel="stylesheet"/>
+<link href="css/Play.css" rel="stylesheet"/>
+
+<PageTitle>Play Secret Hitler Online</PageTitle>
+
+<h1></h1>
+
+<h3>Games</h3>
+<div id="NewGame">New Game</div>
+<div id="GamesWrapper">
+    <div class="TopBar">
+        <p class="GameName">Game Name</p>
+        <p class="GameId">Game Id</p>
+        <p class="GamePlayers">Current Players</p>
+    </div>
+    
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+    <div class="Game">
+        <p class="GameName"></p>
+        <p class="GameId"></p>
+        <p class="GamePlayers"></p>
+    </div>
+
+
+    <div class="Footer"></div>
+</div>
+
+@for (int I = 1; I <= 10 * Page; I++)
+{
+    int GameNumber = (Page - 1) * 10 + I;
+
+    Game? Game = GetGame(GameNumber);
+
+    if (Game != null)
+    {
+        <style>
+        .Game:nth-of-type(@I) > .GameName::before {
+            content: @Game.GameName;
+        }
+        
+        .Game:nth-of-type(@I) > .GameId::before {
+            content: @Game.GameId.ToString();
+        }
+        
+        .Game:nth-of-type(@I) > .GamePlayers::before {
+            content: @Game.;
+        }
+    </style>
+    }
+}
+
+@code {
+
+    [Parameter]
+    public int Page { get; set; }
+
+    private Game? GetGame(int GameNumber)
+    {
+        Dictionary<ulong, Game> GameList = Games.ToDictionary();
+        ulong[] Keys = GameList.Keys.ToArray();
+        try
+        {
+            return GameList[Keys[GameNumber - 1]];
+        }
+        catch
+        {
+            return null;
+        }
+    }
+}

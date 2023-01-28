@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Rubik";
+    src: local("Rubik"), url("../fonts/Rubik.ttf") format("truetype");
+}
+
+h3:nth-of-type(1) {
+    position: absolute;
+    color: white;
+    font: 6vmin "Rubik";
+    width: 10vw;
+    text-align: center;
+    left: calc(50% - 5vw);
+    top: 12vh
+}
+
+#GamesWrapper {
+    position: absolute;
+    height: 70vh;
+    width: 70vw;
+    left: calc(50% - 35vw);
+    top: 25vh;
+    border-radius: 2vmax;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    
+    background: rgba(0, 0, 0, 0.5)
+}
+
+#GamesWrapper > .TopBar {
+    height: 6.5%;
+    width: 100%;
+    border-bottom: solid 2px dimgray;
+    background: rgba(42, 42, 50, 0.5);
+    color: white;
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
+}
+
+#GamesWrapper > .Game {
+    height: 8.5%;
+    width: 100%;
+    border-bottom: solid 1px dimgray;
+    background: rgba(42, 42, 50, 0.5);
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
+}
+
+.Game > .GameName {
+    color: white;
+    grid-column: 1;
+}
+.Game > .GameId {
+    color: white;
+    grid-column: 2;
+}
+.Game > .GamePlayers {
+    color: white;
+    grid-column: 3;
+}
+
+#GamesWrapper > .Footer {
+    height: 8.5%;
+    width: 100%;
+    margin-top: auto;
+    background: rgba(99, 129, 165, 35%);
+    border-radius: 0 0 2vw 2vw;
+}

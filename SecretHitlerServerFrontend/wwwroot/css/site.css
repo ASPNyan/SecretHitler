@@ -1,14 +1,22 @@
 @font-face {
+    font-family: "Rubik";
+    src: local("Rubik"), url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+}
+
+@font-face {
     font-family: "Eskapade Fraktur Black";
     src: url("../fonts/Eskapade Fraktur Black.ttf") format("truetype");
 }
 
 :root {
     --Golden-Ratio: 1.61803398875;
+    --Fascist-Orange: #ff897f;
+    --Liberal-Blue: #6381a5;
+    --Background: #2a2a32;
 }
 
 body {
-    background: #2a2a32;
+    background: var(--Background);
     overflow: hidden;
 }
 

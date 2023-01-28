@@ -1,0 +1,40 @@
+﻿h1:nth-of-type(1) {
+    position: absolute;
+    top: -7.5vh;
+    line-height: 0;
+    width: 100vw;
+    text-align: center;
+    color: var(--Fascist-Orange);
+    font: 10vmin "Eskapade Fraktur Black";
+    outline: none;
+}
+
+h1:nth-of-type(1):before {
+    content: "";
+    animation: Title 1250ms forwards;
+    animation-delay: 300ms;
+}
+
+@keyframes Title {
+    from {
+        content: "";
+    }
+    16.5% {
+        content: "t H"
+    }
+    33% {
+        content: "et Hi"
+    }
+    49.5% {
+        content: "ret Hit"
+    }
+    66% {
+        content: "cret Hitl"
+    }
+    82.5% {
+        content: "ecret Hitle"
+    }
+    to {
+        content: "Secret Hitler"
+    }
+}

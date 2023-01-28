@@ -7,9 +7,9 @@ namespace SecretHitlerGameHandler.Game;
 
 public abstract class Game
 {
-    protected internal string GameName;
-    protected internal readonly uint GameId;
-    protected internal byte PlayerCount;
+    public string GameName;
+    public readonly uint GameId;
+    public byte PlayerCount;
     protected internal readonly List<Player> Players = new();
     protected internal readonly LiberalBoard LiberalBoard = new();
     protected internal FascistBoard FascistBoard = new(0);

@@ -1,9 +1,4 @@
-﻿:root {
-    --Fascist-Orange: #ff897f;
-    --Liberal-Blue: #6381a5
-}
-
-#PlayButton {
+﻿#PlayButton {
     --Height: calc(10vmax / var(--Golden-Ratio));
     position: absolute;
     
