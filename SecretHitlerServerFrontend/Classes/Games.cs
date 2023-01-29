@@ -4,7 +4,7 @@ namespace SecretHitlerServerFrontend.Classes;
 
 public class Games
 {
-    private static readonly Dictionary<ulong, Game> GamesList = new();
+    private static readonly Dictionary<uint, Game> GamesList = new();
 
     public void AddGame(Game Game)
     {
@@ -16,12 +16,12 @@ public class Games
         GamesList.Remove(Game.GameId);
     }
     
-    public void RemoveGame(ulong GameId)
+    public void RemoveGame(uint GameId)
     {
         GamesList.Remove(GameId);
     }
 
-    public Game QueryGame(ulong GameId)
+    public Game QueryGame(uint GameId)
     {
         return GamesList[GameId];
     }
@@ -31,7 +31,7 @@ public class Games
         return GamesList[Game.GameId];
     }
 
-    public Dictionary<ulong, Game> ToDictionary()
+    public Dictionary<uint, Game> ToDictionary()
     {
         return GamesList;
     }

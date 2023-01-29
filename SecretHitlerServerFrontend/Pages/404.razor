@@ -1,0 +1,10 @@
+﻿@page "/404"
+@inject NavigationManager NavigationManager
+
+<link href="css/404.css" rel="stylesheet"/>
+
+<h1>404: Page Not Found</h1>
+
+<p>Don't know how you got here, but you shouldn't be here.</p>
+
+<div @onclick='() => NavigationManager.NavigateTo("/")'>Return</div>

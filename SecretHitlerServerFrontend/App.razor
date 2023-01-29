@@ -1,11 +1,23 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@inject NavigationManager NavigationManager
+
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="RouteData">
         <RouteView RouteData="@RouteData" DefaultLayout="@typeof(MainLayout)" />
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
+        <PageTitle>404 - Page Not Found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>
+        @if (NotFound())
+        {
+        }
     </NotFound>
 </Router>
+
+@code {
+    private bool NotFound()
+    {
+        NavigationManager.NavigateTo("/404", false, true);
+        return true;
+    }
+}

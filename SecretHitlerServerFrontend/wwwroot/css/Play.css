@@ -3,6 +3,10 @@
     src: local("Rubik"), url("../fonts/Rubik.ttf") format("truetype");
 }
 
+body {
+    user-select: none;
+}
+
 h3:nth-of-type(1) {
     position: absolute;
     color: white;
@@ -12,6 +16,42 @@ h3:nth-of-type(1) {
     left: calc(50% - 5vw);
     top: 12vh
 }
+
+#NewGame {
+    position: absolute;
+    width: 12vmax;
+    left: 70%;
+    top: 19%;
+
+    border-radius: 0.5vmax;
+    background: dimgrey;
+    color: white;
+    font: 2.5vmax "Eskapade Fraktur Black";
+    text-align: center;
+    text-justify: distribute;
+    line-height: 100%;
+    cursor: pointer;
+
+    animation: none;
+    transition: all 150ms ease-in-out;
+}
+
+#NewGame:hover {
+    animation: NewGameHover 2.5s linear infinite;
+    scale: 1.2;
+}
+
+@keyframes NewGameHover {
+    from, to {
+        background: var(--Liberal-Blue);
+        border-color: var(--Liberal-Blue);
+    }
+    50% {
+        background: var(--Fascist-Orange);
+        border-color: var(--Fascist-Orange);
+    }
+}
+
 
 #GamesWrapper {
     position: absolute;
@@ -47,6 +87,7 @@ h3:nth-of-type(1) {
     background: rgba(42, 42, 50, 0.5);
     text-align: center;
     font-family: "Rubik", sans-serif;
+    user-select: revert;
 
     display: grid;
     grid-template-columns: 3fr 2fr 2fr;

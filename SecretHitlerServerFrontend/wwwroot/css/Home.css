@@ -7,6 +7,7 @@
     left: calc(50% - 5vmax);
     top: calc(50% - var(--Height) / 2);
     
+    cursor: pointer;
     border-radius: 1vmax;
     background: dimgrey;
     color: white;

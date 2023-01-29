@@ -4,6 +4,7 @@
 @using SecretHitlerServerFrontend.Classes
 @inject ProtectedLocalStorage BrowserStorage
 @inject Games Games
+@inject NavigationManager NavigationManager
 
 <link href="css/PlayTitle.css" rel="stylesheet"/>
 <link href="css/Play.css" rel="stylesheet"/>
@@ -13,7 +14,7 @@
 <h1></h1>
 
 <h3>Games</h3>
-<div id="NewGame">New Game</div>
+<div id="NewGame" @onclick='() => Navigate("/Redirect/New")'>New Game</div>
 <div id="GamesWrapper">
     <div class="TopBar">
         <p class="GameName">Game Name</p>
@@ -94,7 +95,7 @@
         }
         
         .Game:nth-of-type(@I) > .GamePlayers::before {
-            content: @Game.;
+            content: @(Game.PlayerCount + " / 10 Players");
         }
     </style>
     }
@@ -107,8 +108,8 @@
 
     private Game? GetGame(int GameNumber)
     {
-        Dictionary<ulong, Game> GameList = Games.ToDictionary();
-        ulong[] Keys = GameList.Keys.ToArray();
+        Dictionary<uint, Game> GameList = Games.ToDictionary();
+        uint[] Keys = GameList.Keys.ToArray();
         try
         {
             return GameList[Keys[GameNumber - 1]];
@@ -117,5 +118,10 @@
         {
             return null;
         }
+    }
+    
+    private void Navigate(string Location)
+    {
+        NavigationManager.NavigateTo(Location);
     }
 }

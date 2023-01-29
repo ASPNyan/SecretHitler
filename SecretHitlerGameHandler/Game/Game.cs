@@ -5,7 +5,7 @@ using SecretHitlerBackend.Policies;
 
 namespace SecretHitlerGameHandler.Game;
 
-public abstract class Game
+public class Game
 {
     public string GameName;
     public readonly uint GameId;
@@ -18,10 +18,16 @@ public abstract class Game
     protected internal byte PreviousChancellor = 0;
     protected internal readonly Dictionary<byte, string> PregamePlayers = new();
 
-    public Game(string? GameName = null)
+    public Game(IReadOnlyDictionary<uint, Game> Games, string? GameName = null)
     {
         GameId = GenerateGameId();
+        while (Games.ContainsKey(GameId)) GameId = GenerateGameId();
         this.GameName = GameName ?? GameId.ToString();
+    }
+
+    public Game(uint GameId, string? GameName = null)
+    {
+        this.GameId = GameId;
     }
 
     private static uint GenerateGameId()
