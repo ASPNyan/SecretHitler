@@ -1,6 +1,4 @@
 ﻿@page "/Redirect/{Site}"
-@using SecretHitlerServerFrontend.Classes
-@using SecretHitlerGameHandler.Game
 @inject NavigationManager NavigationManager
 @inject Games Games
 
@@ -18,11 +16,11 @@
                 
             case "New":
                 uint GameId = new Game(Games.ToDictionary()).GameId;
-                NavigationManager.NavigateTo($"/New/{GameId}");
+                NavigationManager.NavigateTo($"/New/{GameId}", true, true);
                 break;
                 
             default:
-                NavigationManager.NavigateTo("/404");
+                NavigationManager.NavigateTo("/404", false, true);
                 break;
         }
     }

@@ -1,0 +1,43 @@
+﻿@page "/New/{UrlGameId}"
+@using System.Text.RegularExpressions
+@inject NavigationManager NavigationManager
+@inject Games Games
+
+<PageTitle>New Game - Secret Hitler Online</PageTitle>
+
+<link href="css/New.css" rel="stylesheet"/>
+
+<p id="GameId">Game ID: @Game.GameId</p>
+
+<input type="text" id="GameName" maxlength="30" @bind="GameNameInput" @oninput="Args => GameNameInput = (string)Args.Value!"/>
+
+@code {
+    private uint GameId;
+    private Game Game = null!;
+
+    string? GameNameInput;
+
+    [Parameter]
+    public string UrlGameId { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        Regex IntRegex = new(@"\d*");
+
+        if (!IntRegex.IsMatch(UrlGameId))
+        {
+            Game NewGame = new(Games.ToDictionary());
+            NavigationManager.NavigateTo($"/New/{NewGame.GameId}");
+        }
+
+       bool UIntParse = uint.TryParse(UrlGameId, out GameId);
+
+        if (!UIntParse)
+        {
+            Game NewGame = new(Games.ToDictionary());
+            NavigationManager.NavigateTo($"/New/{NewGame.GameId}");
+        }
+
+        Game = new Game(GameId);
+    }
+}
