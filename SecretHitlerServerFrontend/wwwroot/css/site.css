@@ -15,7 +15,12 @@
     --Background: #2a2a32;
 }
 
+main {
+    margin: 0;
+}
+
 body {
+    margin: 0;
     background: var(--Background);
     overflow: hidden;
 }

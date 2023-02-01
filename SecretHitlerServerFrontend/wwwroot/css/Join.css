@@ -2,26 +2,65 @@
 #GameId {
     position: absolute;
     color: white;
-    
+
     top: -1vh;
     right: 1vh;
     font: 2vh "Rubik";
 }
 
-#GameNameWrapper {
-    margin: 0;
+h2 {
+    position: absolute;
+    font: 8vmin "Rubik";
+    color: white;
+    width: 100vw;
+    text-align: center;
+    height: 35vh;
+}
+
+@keyframes JoinGameTitle {
+    from {
+        content: " ";
+    }
+    12.5% {
+        content: "n ";
+    }
+    25% {
+        content: "n G";
+    }
+    37.5% {
+        content: "n Ga";
+    }
+    50% {
+        content: "in Ga";
+    }
+    62.5% {
+        content: "oin Ga";
+    }
+    75% {
+        content: "oin Gam";
+    }
+    87.5% {
+        content: "oin Game";
+    }
+    to {
+        content: "Join Game";
+    }
+}
+
+#JoinWrapper {
     width: 100vw;
     height: 100vh;
+    margin: 0;
     display: grid;
     justify-items: center;
     align-items: center;
 }
 
-#GameNameWrapper > #GameName {
+#UsernameInput {
     position: absolute;
     width: 28vmax;
     height: 8vmin;
-    
+
     border-radius: 2vmax;
     user-select: none;
     background: black;
@@ -34,22 +73,22 @@
     font: 3.5vmin "Rubik";
 }
 
-#GameName::placeholder {
+#UsernameInput::placeholder {
     text-align: left;
     color: white;
     font: 3.5vmin "Eskapade Fraktur Black";
 }
 
-.ContinueButton {
+#JoinButton {
     --Height: calc(18vmin / var(--Golden-Ratio));
     width: 18vmin;
     height: var(--Height);
     border-radius: 2vmin;
-    
-    font: 4vmin "Eskapade Fraktur Black";
+
+    font: 7vmin "Eskapade Fraktur Black";
     text-align: center;
     line-height: 10vmin;
     margin-top: 24vh;
-    
+
     background: var(--Liberal-Blue);
 }

@@ -6,15 +6,24 @@
 <PageTitle>New Game - Secret Hitler Online</PageTitle>
 
 <link href="css/New.css" rel="stylesheet"/>
+<link href="css/Title.css" rel="stylesheet"/>
+
+<h1></h1>
 
 <p id="GameId">Game ID: @Game.GameId</p>
 
-<input type="text" id="GameName" maxlength="30" @bind="GameNameInput" @oninput="Args => GameNameInput = (string)Args.Value!"/>
+@if (GameName)
+{
+    <div id="GameNameWrapper">
+        <input type="text" id="GameName" maxlength="30" @bind="GameNameInput" @oninput="Args => GameNameInput = (string)Args.Value!" placeholder="Game Name:"/>
+        <div class="ContinueButton" @onclick="ContinueButtonClick">Continue</div>
+    </div>
+}
 
 @code {
     private uint GameId;
     private Game Game = null!;
-
+    private bool GameName = true;
     string? GameNameInput;
 
     [Parameter]
@@ -39,5 +48,15 @@
         }
 
         Game = new Game(GameId);
+    }
+
+    private void ContinueButtonClick()
+    {
+        GameName = false;
+
+        Game = new Game(GameId, GameNameInput);
+        Games.AddGame(Game);
+        
+        NavigationManager.NavigateTo($"/Join/{GameId}");
     }
 }

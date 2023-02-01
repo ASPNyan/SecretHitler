@@ -1,0 +1,21 @@
+﻿@page "/Game/{UrlGameId}"
+@inject Games Games
+@inject NavigationManager NavigationManager
+
+@code {
+    private uint GameId;
+
+    [Parameter]
+    public string UrlGameId { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        bool UIntParse = uint.TryParse(UrlGameId, out GameId);
+
+        if (!UIntParse)
+        {
+            Game NewGame = new(Games.ToDictionary());
+            NavigationManager.NavigateTo($"/New/{NewGame.GameId}");
+        }
+    }
+}

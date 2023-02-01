@@ -18,7 +18,7 @@ public static partial class Program
 
     private static int GetPlayerCount()
     {
-        Regex IsDigit = DigitRegex();
+        Regex IsDigit = new(@"\d{1,2}");
         string? Input = null;
         while (string.IsNullOrEmpty(Input) || !IsDigit.IsMatch(Input))
         {
@@ -28,7 +28,4 @@ public static partial class Program
         }
         return int.Parse(Input);
     }
-
-    [GeneratedRegex(@"\d{1,2}")]
-    private static partial Regex DigitRegex();
 }

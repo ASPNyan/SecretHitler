@@ -21,14 +21,16 @@ public class Games
         GamesList.Remove(GameId);
     }
 
-    public Game QueryGame(uint GameId)
+    public static Game QueryGame(uint GameId)
     {
         return GamesList[GameId];
     }
 
-    public Game QueryGame(Game Game)
+    public static bool TryQueryGame(uint GameId, out Game Game)
     {
-        return GamesList[Game.GameId];
+        bool Success = GamesList.TryGetValue(GameId, out Game!);
+
+        return Success;
     }
 
     public Dictionary<uint, Game> ToDictionary()
