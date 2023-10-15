@@ -1,0 +1,11 @@
+﻿@using SecretHitlerServerFrontend.Components
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+    </Found>
+    <NotFound>
+        <PageTitle>404 - Page Not Found</PageTitle>
+        <PageNotFound/>
+    </NotFound>
+</Router>
