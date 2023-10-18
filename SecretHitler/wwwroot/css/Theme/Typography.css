@@ -1,0 +1,140 @@
+﻿/* Fonts */
+@font-face {
+    font-family: "Ahamono";
+    src: 
+            local("Ahamono Monospaced"),
+            url("../../fonts/Ahamono/Ahamono Monospaced.woff") format("woff"),
+            url("../../fonts/Ahamono/Ahamono Monospaced.otf") format("opentype"),
+            url("../../fonts/Ahamono/Ahamono Monospaced.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Futura";
+    font-weight: bold;
+    src: 
+            local("Futura"),
+            url("../../fonts/Futura/Futura Bold.woff2") format("woff2"),
+            url("../../fonts/Futura/Futura Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Futura";
+    font-weight: normal;
+    src:
+            local("Futura"),
+            url("../../fonts/Futura/Futura Normal.woff2") format("woff2"),
+            url("../../fonts/Futura/Futura Normal.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Eskapade Fraktur";
+    src:
+            local("Eskapade Fraktur"),
+            url("../../fonts/Eskapade Fraktur.otf") format("opentype"),
+            url("../../fonts/Eskapade Fraktur.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Germania";
+    src:
+        local("Germania One"),
+        url("../../fonts/Germania.woff2") format("woff2"),
+        url("../../fonts/Germania.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Rubik";
+    src:
+        local("Rubik"),
+        url("../../fonts/Rubik.woff2") format("woff2"),
+        url("../../fonts/Rubik.ttf") format("truetype");
+}
+
+/* font classses */
+
+.ahamono {
+    font-family: "Ahamono", monospace !important;
+    font-weight: normal;
+}
+
+.futura {
+    font-family: "Futura", sans-serif !important;
+    font-weight: normal;
+}
+
+.futura-normal {
+    font-family: "Futura", sans-serif !important;
+    font-weight: normal !important;
+}
+
+.futura-bold {
+    font-family: "Futura", sans-serif !important;
+    font-weight: bold !important;
+}
+
+.eskapade-fraktur {
+    font-family: "Eskapade Fraktur", serif !important;
+    font-weight: bolder;
+}
+
+.germania {
+    font-family: "Germania", serif !important;
+    font-weight: normal;
+}
+
+.rubik {
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+}
+
+/* sizes */
+
+.title-large {
+    font-size: 56pt;
+}
+
+.title-medium {
+    font-size: 48pt;
+}
+
+.title-small {
+    font-size: 40pt;
+}
+
+.header-large {
+    font-size: 42pt;
+}
+
+.header-medium {
+    font-size: 36pt;
+}
+
+.header-small {
+    font-size: 30pt;
+}
+
+.display-large {
+    font-size: 18pt;
+}
+
+.display-medium {
+    font-size: 15pt;
+}
+
+.display-small {
+    font-size: 12pt;
+}
+
+/* font-specific sizes */
+
+.eskapade-fraktur.title-large {
+    font-size: 112pt !important;
+}
+
+.eskapade-fraktur.title-medium {
+    font-size: 96pt !important;
+}
+
+.eskapade-fraktur.title-small {
+    font-size: 80pt !important;
+}
