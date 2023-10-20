@@ -1,0 +1,6 @@
+﻿#Title {
+    position: absolute;
+    top: 2vh;
+    left: 50vw;
+    transform: translateX(-50%);
+}

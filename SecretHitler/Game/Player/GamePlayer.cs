@@ -19,8 +19,9 @@ public class GamePlayer(byte playerId, PlayerRole playerRole, Action<PolicyActio
     public Action<VictorySummary> GameOverTrigger { get; } = gameOverTrigger;
     public bool IsDead { get; private set; }
 
+    public Action PresidentTrigger { get; set; } = () => { };
+
     public void Execute() => IsDead = true;
-    
 }
 
 /// <returns>True if Veto is requested, otherwise false.</returns>

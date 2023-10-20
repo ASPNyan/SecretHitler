@@ -1,0 +1,9 @@
+﻿@RenderContent
+
+@code {
+    private static readonly RenderFragment RenderContent = builder =>
+    {
+        List<RenderFragment> headContent = DynamicHeadContent.GetHeadContent();
+        for (int i = 0; i < headContent.Count; i++) builder.AddContent(i, headContent[i]);
+    };
+}

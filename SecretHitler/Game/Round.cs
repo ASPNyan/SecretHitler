@@ -1,6 +1,7 @@
 ﻿using SecretHitler.Game.Boards;
+using SecretHitler.Game.Player;
 
-namespace SecretHitler.Game.Player;
+namespace SecretHitler.Game;
 
 public class Round(in GameController game)
 {
@@ -43,7 +44,7 @@ public class Round(in GameController game)
 
             foreach (GamePlayer player in Game.Players.Values) player.VoteTrigger(OnVote);
 
-            while (playersVoted < Game.AlivePlayers) await Task.Delay(5);
+            while (playersVoted < Game.AlivePlayers) await Task.Delay(500);
 
             return yesVotes;
 

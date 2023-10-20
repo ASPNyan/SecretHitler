@@ -141,6 +141,8 @@ public class GameController
         while (Players[CurrentPresident].IsDead) CurrentPresident++;
         NextPresident = null;
         CurrentChancellor = null;
+
+        Players[CurrentPresident].PresidentTrigger();
     }
     
     /// <param name="nominee">The nominated Chancellor</param>

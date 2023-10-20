@@ -1,0 +1,14 @@
+﻿@code {
+    private static List<RenderFragment> HeadContent { get; set; } = new();
+    public static List<RenderFragment> GetHeadContent() => HeadContent;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = _ => { };
+
+    protected override void OnParametersSet()
+    {
+        if (HeadContent.Contains(ChildContent)) return; // hopefully prevent duplicates
+        HeadContent.Add(ChildContent);
+    }
+
+}

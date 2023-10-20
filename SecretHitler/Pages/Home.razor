@@ -1,0 +1,34 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+<DynamicHeadContent>
+    <link rel="stylesheet" href="css/Pages/Home.css"/>
+</DynamicHeadContent>
+
+<h3 id="SubTitle" class="header-xsmall germania">Can you find and stop the...</h3>
+<SecretHitlerTitle style="top: calc(40pt + 2vh); font-size: 130pt;"/>
+
+<div id="ButtonContainer" data-current-hover="@_currentHover">
+    <button id="PlayButton" class="header-large eskapade-fraktur tertiary tertiary-container-text" 
+            @onmouseenter="@(_ => SetCurrentHover("Play"))" @onmouseleave="@ResetCurrentHover" @onclick="@OnPlay">
+        Play
+    </button>
+    <button id="RulesButton" class="header-small ahamono tertiary-container tertiary-text" 
+            @onmouseenter="@(_ => SetCurrentHover("Rules"))" @onmouseleave="@ResetCurrentHover" @onclick="@OnRules">
+        Rules
+    </button>
+    <button id="InfoButton" class="header-small ahamono tertiary-container tertiary-text" 
+            @onmouseenter="@(_ => SetCurrentHover("Info"))" @onmouseleave="@ResetCurrentHover" @onclick="@OnInfo">
+        Info
+    </button>
+</div>
+
+@code {
+    private void OnPlay() => Navigation.NavigateTo("Play");
+    private void OnRules() => Navigation.NavigateTo("Rules");
+    private void OnInfo() => Navigation.NavigateTo("Info");
+
+    private string? _currentHover;
+    private void SetCurrentHover(string newValue) => _currentHover = newValue;
+    private void ResetCurrentHover() => _currentHover = null;
+}

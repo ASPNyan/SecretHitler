@@ -1,0 +1,93 @@
+﻿#SubTitle {
+    position: absolute;
+    left: 50vw;
+    top: 1vh;
+    transform: translateX(-50%);
+}
+
+#ButtonContainer button {
+    outline: none;
+    border: 0;
+    padding: 1vh 1vw;
+    box-sizing: border-box;
+    border-radius: 2.5vh;
+    transition: background-color 200ms, color 200ms, font-size 200ms, line-height 200ms,
+                width 200ms, height 200ms, top 200ms, left 200ms, bottom 200ms, scale 200ms;
+}
+
+#PlayButton {
+    position: absolute;
+    width: 10vw;
+    height: 10vh;
+    font-size: 56pt;
+    line-height: 8vh;
+    left: 50vw;
+    top: 52vh;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#RulesButton,
+#InfoButton {
+    position: absolute;
+    width: 9vw;
+    height: 5vh;
+    line-height: 3vh;
+    bottom: 37vh;
+}
+
+#RulesButton {
+    right: 50.5vw;
+}
+
+#InfoButton {
+    left: 50.5vw;
+}
+
+#PlayButton:hover {
+    width: 17.5vw;
+    height: 15vh;
+    font-size: 100pt;
+}
+
+#RulesButton:hover {
+    background-color: var(--md-sys-color-tertiary);
+    color: var(--md-sys-color-tertiary-container);
+    width: 15vw;
+    height: 11vh;
+    font-size: 66pt;
+}
+
+#InfoButton:hover {
+    background-color: var(--md-sys-color-tertiary);
+    color: var(--md-sys-color-tertiary-container);
+    width: 13vw;
+    height: 11vh;
+    font-size: 66pt;
+}
+
+#ButtonContainer[data-current-hover="Play"] button:not(#PlayButton) {
+    bottom: 35vh;
+    scale: 80%;
+}
+
+#ButtonContainer[data-current-hover="Rules"] #PlayButton {
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-tertiary);
+    left: 55vw;
+    top: 55vh;
+    width: 9vw;
+    height: 5vh;
+    font-size: 32pt;
+    line-height: 3vh;
+}
+
+#ButtonContainer[data-current-hover="Info"] #PlayButton {
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-tertiary);
+    left: 45vw;
+    top: 55vh;
+    width: 9vw;
+    height: 5vh;
+    font-size: 32pt;
+    line-height: 3vh;
+}
